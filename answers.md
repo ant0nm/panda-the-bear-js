@@ -1,3 +1,4 @@
+# Part 1
 * Question 1
 ```javascript
 // get the profile image first
@@ -88,4 +89,48 @@ submitInput.disabled = true;
 var sideBar = document.querySelector('aside');
 var bioInfo = document.querySelector('.bio-info');
 sideBar.removeChild(bioInfo);
+```
+
+# Part 2
+* Question 1
+```javascript
+var timeTravelDiv = document.querySelector('div#time-travel');
+timeTravelDiv.parentNode.parentNode.removeChild(timeTravelDiv.parentNode);
+```
+
+* Question 2
+```javascript
+var pikachuImage = document.querySelector('.portfolio-image#right-image img');
+var dupPikachuImage = pikachuImage.cloneNode(true);
+var portfolioContainer = document.querySelector('.portfolio-container');
+portfolioContainer.appendChild(dupPikachuImage);
+```
+
+* Question 3
+```javascript
+let portfolioContainer = document.querySelector('.portfolio-container');
+let pikachuImage = document.querySelector('.portfolio-image#right-image img');
+for (let i = 1; i <= 10; i++) {
+  let dupPikachuImage = pikachuImage.cloneNode(true);
+  portfolioContainer.appendChild(dupPikachuImage);
+}
+```
+
+* Question 4
+```javascript
+const listItem = document.createElement('li');
+listItem.classList.add('bio-info-item');
+const leftSpan = document.createElement('span');
+leftSpan.classList.add('bio-info-title');
+const rightSpan = document.createElement('span');
+rightSpan.classList.add('bio-info-value');
+rightSpan.classList.add('bio-info-time');
+var lastUpdated = document.createTextNode('Page last updated on');
+var dateTextNode = document.createTextNode(new Date());
+leftSpan.appendChild(lastUpdated);
+rightSpan.appendChild(dateTextNode);
+listItem.appendChild(leftSpan);
+listItem.appendChild(rightSpan);
+var bioInfo = document.querySelector('.bio-info');
+bioInfo.append(listItem);
 ```
